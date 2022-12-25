@@ -63,7 +63,6 @@ services:
       - spring
     depends_on:
       - zipkin
-      - eureka-server
   customer:
     image: awab228/customer:latest
     container_name: customer
@@ -77,7 +76,6 @@ services:
     depends_on:
       - postgres
       - zipkin
-      - eureka-server
       - rabbitmq
   fraud:
     image: awab228/fraud:latest
@@ -92,7 +90,6 @@ services:
     depends_on:
       - postgres
       - zipkin
-      - eureka-server
       - rabbitmq
   notification:
     image: awab228/notification:latest
@@ -107,7 +104,6 @@ services:
     depends_on:
       - postgres
       - zipkin
-      - eureka-server
       - rabbitmq
 networks:
   postgres:
